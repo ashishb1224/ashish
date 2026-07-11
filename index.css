@@ -1,145 +1,160 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #faf5f5;
+  color: #333;
+  overflow-x: hidden;
+}
 
-        /* Base Styles */
-        * { 
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #faf5f5;
-            color: #333;
-            overflow-x: hidden;
-        }
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe1e8 0%, #ffc0cb 100%);
+  padding: 20px;
+}
+.hero h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4.5rem;
+  color: #d81b60;
+  margin-bottom: 10px;
+  animation: fadeInDown 1.5s ease;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.5s ease;
+}
+.hero-btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #d81b60;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s;
+  animation: fadeInUp 1.5s ease;
+}
+.hero-btn:hover {
+  background-color: #ad1457;
+  transform: translateY(-3px);
+}
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #ffe1e8 0%, #ffc0cb 100%);
-            padding: 20px;
-        }
-        .hero h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
-            color: #d81b60;
-            margin-bottom: 10px;
-            animation: fadeInDown 1.5s ease;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 600px;
-            margin-bottom: 30px;
-            animation: fadeInUp 1.5s ease;
-        }
-        .hero-btn {
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            color: #fff;
-            background-color: #d81b60;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s;
-            animation: fadeInUp 1.5s ease;
-        }
-        .hero-btn:hover {
-            background-color: #ad1457;
-            transform: translateY(-3px);
-        }
+/* Photo Collage Section (CSS Grid) */
+.collage-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-title {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #d81b60;
+  margin-bottom: 40px;
+}
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 15px;
+}
+/* Creating a masonry-like look by spanning rows/columns on certain items */
+.collage-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.collage-item:hover img {
+  transform: scale(1.08);
+}
+.large {
+  grid-row: span 2;
+}
+.wide {
+  grid-column: span 2;
+}
 
-        /* Photo Collage Section (CSS Grid) */
-        .collage-section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
-            color: #d81b60;
-            margin-bottom: 40px;
-        }
-        .collage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            grid-auto-rows: 250px;
-            gap: 15px;
-        }
-        /* Creating a masonry-like look by spanning rows/columns on certain items */
-        .collage-item {
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .collage-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-        .collage-item:hover img {
-            transform: scale(1.08);
-        }
-        .large {
-            grid-row: span 2;
-        }
-        .wide {
-            grid-column: span 2;
-        }
+/* Message Section */
+.message-section {
+  background-color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+.message-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-top: 5px solid #d81b60;
+}
+.message-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #d81b60;
+}
 
-        /* Message Section */
-        .message-section {
-            background-color: #fff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .message-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 5px solid #d81b60;
-        }
-        .message-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-            margin-bottom: 20px;
-        }
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #d81b60;
-        }
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .wide {
-                grid-column: span 1;
-            }
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-        }
-    
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .wide {
+    grid-column: span 1;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  .photo {
+    max-height: 400px;
+  }
+}
