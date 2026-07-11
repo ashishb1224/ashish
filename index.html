@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Motta!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        /* Base Styles */
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ffe1e8 0%, #ffc0cb 100%);
+            padding: 20px;
+        }
+        .hero h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+            animation: fadeInDown 1.5s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease;
+        }
+        .hero-btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #d81b60;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s;
+            animation: fadeInUp 1.5s ease;
+        }
+        .hero-btn:hover {
+            background-color: #ad1457;
+            transform: translateY(-3px);
+        }
+
+        /* Photo Collage Section (CSS Grid) */
+        .collage-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #d81b60;
+            margin-bottom: 40px;
+        }
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 15px;
+        }
+        /* Creating a masonry-like look by spanning rows/columns on certain items */
+        .collage-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .collage-item:hover img {
+            transform: scale(1.08);
+        }
+        .large {
+            grid-row: span 2;
+        }
+        .wide {
+            grid-column: span 2;
+        }
+
+        /* Message Section */
+        .message-section {
+            background-color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .message-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid #d81b60;
+        }
+        .message-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #d81b60;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .wide {
+                grid-column: span 1;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Happy Birthday, Motta! 🫀🧿</h1>
+        <p>Today is all about celebrating you and the beautiful moments we've shared. I hope your day is as amazing as you are.</p>
+        <button class="hero-btn" onclick="triggerConfetti()">Celebrate! 🎉</button>
+        <a href="#memories" style="margin-top: 20px; color: #d81b60; text-decoration: none; font-weight: 600;">Scroll for our memories ↓</a>
+    </section>
+
+    <!-- Collage Section -->
+    <section id="memories" class="collage-section">
+        <h2 class="section-title">Our Favorite Moments</h2>
+        <div class="collage-grid">
+            <!-- Replace the 'src' links with your actual photo URLs or local file paths -->
+            <div class="collage-item large">
+                <img src="./images/IMG_1442.JPG" alt="Memory 1">
+            </div>
+            <div class="collage-item">
+                <img src="./images/IMG_1239.jpg" alt="Memory 2">
+            </div>
+            <div class="collage-item">
+                <img src="../images/IMG-20250224-WA0006.jpg" alt="Memory 3">
+            </div>
+            <div class="collage-item wide">
+                <img src="./images/IMG-20230519-WA0008.jpg" alt="Memory 4">
+            </div>
+            <div class="collage-item" style="height: 400px;">
+                <img src="./images/IMG-20230212-WA0000.jpg" alt="Memory 5">
+            </div>
+            <div class="collage-item large">
+                <img src="./images//IMG_1710.JPG" alt="Memory 6">
+            </div>
+            <div class="collage-item" style="height: 400px;">
+                <img style="object-fit: cover;" src="./images/IMG_1210.jpg" alt="Memory 7">
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="message-card">
+            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 20px;">To My Favorite Person</h2>
+            <p>
+                Wishing you the happiest of birthdays! Thank you for being the incredible person that you are. Every day with you is an adventure, and I am so grateful for all the memories we've created together—from the quiet coffee dates to the chaotic trips. 
+            </p>
+            <p>
+                May this year bring you all the happiness, success, and love you deserve. I can't wait to see what the future holds for us.
+            </p>
+            <div class="signature">With all my love</div>
+        </div>
+    </section>
+
+    <!-- Interactive Script -->
+    <script>
+        // Trigger confetti on load
+        window.onload = function() {
+            triggerConfetti();
+        };
+
+        // Confetti function
+        function triggerConfetti() {
+            var duration = 3 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#d81b60', '#ffc0cb', '#ffffff']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#d81b60', '#ffc0cb', '#ffffff']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+    </script>
+</body>
+</html>
